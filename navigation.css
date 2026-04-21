@@ -253,3 +253,18 @@ h1, h2, h3, h4 {
   background: var(--primary-light);
   transform: translateY(-3px);
 }
+
+/* Chat Navigation Styling */
+.nav-link[href="chat.html"] i {
+  animation: pulse-chat 2s infinite;
+}
+
+@keyframes pulse-chat {
+  0%, 100% {
+    color: inherit;
+  }
+  50% {
+    color: #ff8c42;
+  }
+}
+}

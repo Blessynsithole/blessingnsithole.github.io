@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with Blessing | Portfolio AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="navigation.css">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="glass-nav">
+    <div class="nav-container">
+      <a href="index.html" class="logo">BS</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html" class="nav-link"><i class="fas fa-key"></i> About</a></li>
+        <li><a href="expertise.html" class="nav-link"><i class="fas fa-laptop-code"></i> Expertise</a></li>
+        <li><a href="projects.html" class="nav-link"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="skills.html" class="nav-link"><i class="fas fa-cogs"></i> Skills</a></li>
+        <li><a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="chat.html" class="nav-link active"><i class="fas fa-comments"></i> Chat</a></li>
+      </ul>
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Chat Page -->
+  <main class="chat-page">
+    <section class="chat-hero">
+      <h1>Chat with <span>Blessing</span></h1>
+      <p>Ask anything - about Blessing, tech, or general questions</p>
+    </section>
+
+    <div class="chat-container">
+      <!-- Setup Instructions (shown if LLM not available) -->
+      <div id="setupInstructions" class="setup-instructions hidden">
+        <div class="setup-content">
+          <h2><i class="fas fa-info-circle"></i> Setup Required</h2>
+          <p>To use the AI chat feature, you need to set up a local LLM server.</p>
+          
+          <div class="setup-options">
+            <div class="option">
+              <h3>Option 1: Ollama (Recommended)</h3>
+              <ol>
+                <li>Download Ollama from <a href="https://ollama.ai" target="_blank">ollama.ai</a></li>
+                <li>Install and run: <code>ollama serve</code></li>
+                <li>Pull a model: <code>ollama pull mistral</code></li>
+                <li>Refresh this page</li>
+              </ol>
+            </div>
+            
+            <div class="option">
+              <h3>Option 2: Hugging Face Inference API</h3>
+              <ol>
+                <li>Get a free API key from <a href="https://huggingface.co/settings/tokens" target="_blank">Hugging Face</a></li>
+                <li>Enter it when prompted</li>
+                <li>Uses free inference endpoints</li>
+              </ol>
+            </div>
+          </div>
+          
+          <button id="checkConnectionBtn" class="btn btn-primary">
+            <i class="fas fa-plug"></i> Check Connection
+          </button>
+        </div>
+      </div>
+
+      <!-- Chat Area (shown if LLM available) -->
+      <div id="chatArea" class="chat-area hidden">
+        <div class="chat-messages" id="chatMessages"></div>
+        
+        <div class="chat-input-area">
+          <div class="input-group">
+            <textarea 
+              id="userInput" 
+              class="chat-input" 
+              placeholder="Ask me anything..."
+              rows="2"
+            ></textarea>
+            <button id="sendBtn" class="send-btn" title="Send message (Ctrl+Enter)">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+          <div class="chat-meta">
+            <small>Powered by open-source LLM • No data stored</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="loading-state hidden">
+        <div class="spinner"></div>
+        <p>Initializing chat...</p>
+      </div>
+    </div>
+
+    <!-- Suggested Prompts -->
+    <section class="suggested-prompts" id="suggestedPrompts">
+      <h3>Suggested Questions</h3>
+      <div class="prompts-grid">
+        <button class="prompt-card" data-prompt="Tell me about Blessing">
+          <i class="fas fa-user"></i>
+          <span>About Blessing</span>
+        </button>
+        <button class="prompt-card" data-prompt="What are Blessing's main skills?">
+          <i class="fas fa-code"></i>
+          <span>Skills</span>
+        </button>
+        <button class="prompt-card" data-prompt="What projects has Blessing worked on?">
+          <i class="fas fa-folder"></i>
+          <span>Projects</span>
+        </button>
+        <button class="prompt-card" data-prompt="How can I contact Blessing?">
+          <i class="fas fa-envelope"></i>
+          <span>Contact</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-social">
+        <a href="https://github.com/Blessynsithole"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/blessing-n-sithole-126276203/"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>&copy; 2025 Blessing N Sithole. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+  <script type="module" src="chat.js"></script>
+</body>
+</html>
