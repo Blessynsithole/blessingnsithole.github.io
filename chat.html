@@ -37,41 +37,8 @@
     </section>
 
     <div class="chat-container">
-      <!-- Setup Instructions (shown if LLM not available) -->
-      <div id="setupInstructions" class="setup-instructions hidden">
-        <div class="setup-content">
-          <h2><i class="fas fa-info-circle"></i> Setup Required</h2>
-          <p>To use the AI chat feature, you need to set up a local LLM server.</p>
-          
-          <div class="setup-options">
-            <div class="option">
-              <h3>Option 1: Ollama (Recommended)</h3>
-              <ol>
-                <li>Download Ollama from <a href="https://ollama.ai" target="_blank">ollama.ai</a></li>
-                <li>Install and run: <code>ollama serve</code></li>
-                <li>Pull a model: <code>ollama pull mistral</code></li>
-                <li>Refresh this page</li>
-              </ol>
-            </div>
-            
-            <div class="option">
-              <h3>Option 2: Hugging Face Inference API</h3>
-              <ol>
-                <li>Get a free API key from <a href="https://huggingface.co/settings/tokens" target="_blank">Hugging Face</a></li>
-                <li>Enter it when prompted</li>
-                <li>Uses free inference endpoints</li>
-              </ol>
-            </div>
-          </div>
-          
-          <button id="checkConnectionBtn" class="btn btn-primary">
-            <i class="fas fa-plug"></i> Check Connection
-          </button>
-        </div>
-      </div>
-
-      <!-- Chat Area (shown if LLM available) -->
-      <div id="chatArea" class="chat-area hidden">
+      <!-- Chat Area (shown by default) -->
+      <div id="chatArea" class="chat-area">
         <div class="chat-messages" id="chatMessages"></div>
         
         <div class="chat-input-area">
@@ -87,15 +54,9 @@
             </button>
           </div>
           <div class="chat-meta">
-            <small>Powered by open-source LLM • No data stored</small>
+            <small>Blessing N Sithole Portfolio Assistant</small>
           </div>
         </div>
-      </div>
-
-      <!-- Loading State -->
-      <div id="loadingState" class="loading-state hidden">
-        <div class="spinner"></div>
-        <p>Initializing chat...</p>
       </div>
     </div>
 

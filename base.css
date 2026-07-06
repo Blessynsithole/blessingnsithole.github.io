@@ -1,0 +1,26 @@
+/* base.css - Shared base styles imported by all page CSS files */
+
+/* Color variables are defined in navigation.css (loaded on every page),
+   but we redeclare them here as a fallback for any page-level import. */
+:root {
+  --primary: #6C63FF;
+  --primary-light: #8B85FF;
+  --secondary: #4D4C72;
+  --dark: #2A2A3B;
+  --light: #F8F9FA;
+  --accent: #FF6584;
+  --accent-light: #FF8FA3;
+  --text: #33334D;
+  --text-light: #6D6D8A;
+  --white: #FFFFFF;
+  --black: #000000;
+  --glass: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* Gray scale helpers used in some CSS files */
+  --gray-600: #6b7280;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+}
